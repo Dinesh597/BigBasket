@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigBasket Header</title>
+
+<!-- Bootstrap 5.3 CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!----Fontawsomcdn-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+	integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #222;
+	background: #f5f5f5;
+}
+
+.main-header {
+	background: #fff;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header-container {
+	max-width: 1060px;
+	margin: auto;
+	padding: 8px 12px;
+}
+
+/* Top header */
+.top-header {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.brand {
+	min-width: 93px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1;
+}
+
+.brand-name {
+	font-size: 19px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #df292d;
+}
+
+.brand-symbol {
+	display: inline-block;
+	background: #78b900;
+	color: #df292d;
+	border-radius: 4px;
+	padding: 1px 3px;
+	margin-right: 2px;
+}
+
+.brand-tagline {
+	display: block;
+	color: #07529a;
+	font-size: 8px;
+	font-weight: bold;
+	margin-top: 3px;
+}
+
+/* Search bar */
+.search-box {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	height: 36px;
+	padding: 0 12px;
+	min-width: 100px;
+}
+
+.search-box i {
+	color: #69a900;
+	font-size: 15px;
+}
+
+.search-box input {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 6px 12px;
+	font-size: 14px;
+	background: transparent;
+}
+
+.search-box input::placeholder {
+	color: #aaa;
+}
+
+/* Delivery location */
+.delivery-box {
+	min-width: 169px;
+	background: #f0f0f0;
+	padding: 5px 9px;
+	border-radius: 4px;
+	font-size: 12px;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.delivery-box strong {
+	color: #659e00;
+	display: block;
+	font-size: 12px;
+}
+
+/* Login button */
+.login-btn {
+	background: #222;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 5px 16px;
+	min-width: 121px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 12px;
+}
+
+.login-btn:hover {
+	background: #444;
+	color: white;
+}
+
+/* Cart */
+.cart-btn {
+	width: 36px;
+	height: 36px;
+	border: none;
+	border-radius: 5px;
+	background: #fbe9e9;
+	color: #d92c32;
+	font-size: 21px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Navigation */
+.bottom-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	margin-top: 17px;
+}
+
+.category-btn {
+	background: #5d9600;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 12px;
+	min-width: 176px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	font-size: 14px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.category-btn:hover {
+	background: #4b7b00;
+}
+
+.nav-link-custom {
+	text-decoration: none;
+	color: #111;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.nav-link-custom:hover {
+	color: #495832;
+}
+
+.nav-next {
+	font-size: 19px;
+	font-weight: bold;
+	margin-left: 4px;
+}
+
+.smart-basket {
+	border-left: 1px solid #eee;
+	padding-left: 20px;
+	min-width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #555;
+}
+
+.smart-basket i {
+	font-size: 20px;
+	color: #84ad73;
+}
+
+/* Tablet */
+@media ( max-width : 991px) {
+	.header-container {
+		max-width: 100%;
+	}
+	.top-header {
+		gap: 12px;
+	}
+	.delivery-box {
+		min-width: 145px;
+	}
+	.bottom-nav {
+		gap: 18px;
+		overflow-x: auto;
+		padding-bottom: 5px;
+		justify-content: flex-start;
+	}
+	.smart-basket {
+		padding-left: 15px;
+	}
+}
+
+/* Mobile */
+@media ( max-width : 575px) {
+	.header-container {
+		padding: 10px 12px;
+	}
+	.top-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 12px;
+	}
+	.brand {
+		text-align: left;
+		justify-self: start;
+	}
+	.search-box {
+		grid-column: 1/-1;
+		grid-row: 2;
+		width: 100%;
+		height: 40px;
+	}
+	.delivery-box {
+		grid-column: 1/-1;
+		grid-row: 3;
+		width: 100%;
+	}
+	.login-btn {
+		grid-column: 1;
+		grid-row: 4;
+		width: 130px;
+		height: 35px;
+	}
+	.cart-btn {
+		grid-column: 2;
+		grid-row: 4;
+		justify-self: end;
+	}
+	.bottom-nav {
+		margin-top: 14px;
+		gap: 20px;
+	}
+	.category-btn {
+		min-width: 165px;
+	}
+	.nav-link-custom {
+		font-size: 13px;
+	}
+	.smart-basket {
+		min-width: 100px;
+	}
+}
+
+/*---Div2---*/
+.custom-btn {
+	border-radius: 8px;
+	font-weight: 800;
+	font-size: 13px;
+	padding: 10px 20px;
+	line-height: 1.2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: none;
+	letter-spacing: 0.5px;
+	text-decoration: none;
+	/* Ensures the links don't have underlines */
+}
+
+.custom-btn:hover {
+	text-decoration: none;
+	opacity: 0.9;
+}
+
+.btn-eggs {
+	background-color: #e8e8e8;
+	border: 1.5px solid #000;
+	color: #000;
+}
+
+.btn-neupass {
+	background-color: #181132;
+	color: #fff;
+	padding: 10px 25px;
+}
+
+.btn-ayurveda {
+	background-color: #4b6228;
+	color: #fff;
+}
+
+.btn-gray-light {
+	background-color: #e8e8e8;
+	color: #000;
+}
+
+.neu-logo {
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	background: linear-gradient(45deg, #a73787, #ee5e49);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-right: 6px;
+}
+
+/*----Div3-------*/
+.smart-basket-section {
+	background-color: #f6f6f6;
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.basket-header .view-all {
+	color: #4a4a4a;
+	text-decoration: underline;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.nav-btn {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	width: 32px;
+	height: 32px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #333;
+	cursor: pointer;
+	text-decoration: none;
+	user-select: none;
+}
+
+.nav-btn:hover {
+	background-color: #e9ecef;
+	color: #000;
+}
+
+/* --- Custom Slider CSS --- */
+.scrolling-wrapper {
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+	padding-bottom: 10px;
+	/* Space for hidden scrollbar */
+}
+
+/* Hide scrollbar for a cleaner look */
+.scrolling-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.scrolling-wrapper {
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+/* Fixed width for columns inside the slider */
+.scrolling-wrapper .col {
+	flex: 0 0 auto;
+	width: 280px;
+}
+
+/* --- Card CSS --- */
+.product-card {
+	background: #fff;
+	border-radius: 8px;
+	border: 1px solid #eaeaea;
+	padding: 10px;
+	position: relative;
+	transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.discount-badge {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #4b6228;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 3px 8px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	z-index: 2;
+}
+
+.img-container {
+	position: relative;
+	text-align: center;
+	padding: 20px 0;
+	height: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.img-container img {
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.veg-icon {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #1e8728;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2px;
+}
+
+.veg-icon::after {
+	content: '';
+	width: 8px;
+	height: 8px;
+	background-color: #1e8728;
+	border-radius: 50%;
+}
+
+.time-badge {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #f4f6f8;
+	color: #333;
+	font-size: 10px;
+	font-weight: 600;
+	padding: 2px 6px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+
+.time-badge i {
+	color: #2b7a0b;
+}
+
+.brand-name {
+	color: #888;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+.product-title {
+	font-size: 14px;
+	color: #333;
+	font-weight: 500;
+	margin-bottom: 12px;
+	display: -webkit-box;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: 40px;
+}
+
+.weight-select {
+	font-size: 13px;
+	border-radius: 4px;
+	border-color: #ccc;
+	color: #333;
+	padding: 4px 8px;
+	height: 32px;
+}
+
+.price-area {
+	margin-top: 12px;
+	margin-bottom: 15px;
+}
+
+.current-price {
+	font-size: 15px;
+	font-weight: 700;
+	color: #222;
+}
+
+.old-price {
+	font-size: 12px;
+	color: #888;
+	text-decoration: line-through;
+	margin-left: 6px;
+}
+
+.action-row {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-wishlist {
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #666;
+	width: 36px;
+	height: 36px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-wishlist:hover {
+	background: #f8f9fa;
+}
+
+.btn-add {
+	flex: 1;
+	border: 1px solid #cc0000;
+	background: #fff;
+	color: #cc0000;
+	font-weight: 600;
+	font-size: 14px;
+	border-radius: 4px;
+	height: 36px;
+	transition: all 0.2s;
+}
+
+.btn-add:hover {
+	background: #cc0000;
+	color: #fff;
+}
+
+/*----Div4------*/
+.top-offers-container {
+	padding: 20px;
+	/* Matched padding to the above div */
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+	background-color: #fbfbfb;
+	max-width: 1200px;
+	/* Added max-width to align with the smart basket */
+	margin: 0 auto;
+	/* Centers the container */
+}
+
+.section-title {
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 25px;
+	font-size: 22px;
+}
+
+.offer-card {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	text-decoration: none !important;
+	height: 250px;
+	box-shadow: -8px 12px 25px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card:hover {
+	transform: translateY(-4px);
+	box-shadow: -8px 16px 30px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card-top {
+	background-color: #da2525;
+	color: #fff;
+	padding: 20px;
+	height: 125px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.offer-card-top span {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.offer-card-bottom {
+	background-color: #fff;
+	padding: 15px 20px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.offer-text-wrapper {
+	border-left: 5px solid #da2525;
+	margin-left: -20px;
+	padding-left: 15px;
+}
+
+.offer-text-wrapper span {
+	display: block;
+	color: #111;
+	font-size: 20px;
+	font-weight: 900;
+	line-height: 1.1;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+}
+
+.view-offers-link {
+	color: #666;
+	font-size: 11px;
+	margin-top: auto;
+}
+
+/*--------------Div5-----------------*/
+.fruits-veg-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+}
+
+.section-title {
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 20px;
+	font-size: 22px;
+}
+
+.fruit-card {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	text-decoration: none !important;
+	border: 1px solid #eaeaea;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fruit-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.fruit-card-img {
+	background-color: #f1f1f1;
+	/* Light gray background for the image area */
+	height: 160px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+}
+
+.fruit-card-img img {
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.fruit-card-info {
+	padding: 15px;
+	background-color: #fff;
+}
+
+.category-name {
+	color: #555;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.discount-tag {
+	border-left: 4px solid #da2525;
+	/* Red vertical line */
+	padding-left: 8px;
+	font-size: 16px;
+	font-weight: 800;
+	color: #111;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+/*--------Div6------------*/
+.daily-staples-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+}
+
+.section-title {
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 20px;
+	font-size: 22px;
+}
+
+.staple-slider {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	gap: 15px;
+	padding-bottom: 15px;
+	/* Hide scrollbar for a cleaner look */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.staple-slider::-webkit-scrollbar {
+	display: none;
+}
+
+.staple-card {
+	flex: 0 0 auto;
+	width: 180px;
+	/* Fixed width to fit exactly 6 items nicely in 1200px */
+	background-color: #fff;
+	border-radius: 8px;
+	border: 1px solid #eaeaea;
+	text-decoration: none !important;
+	color: #333;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.staple-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.staple-img {
+	height: 120px;
+	width: 100%;
+	background-color: #f8f9fa;
+}
+
+.staple-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.staple-title {
+	padding: 12px 10px;
+	font-size: 13px;
+	font-weight: 500;
+	text-align: left;
+	color: #333;
+}
+
+/*---------Div12------------------------*/
+.carousel-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.promo-carousel-inner {
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	background-color: #f2edfb;
+	/* Fallback background color */
+}
+
+/* Banner image styling */
+.promo-carousel-inner img {
+	width: 100%;
+	height: auto;
+	min-height: 250px;
+	object-fit: cover;
+	display: block;
+}
+
+/* Ensure anchor tags span the full slide */
+.promo-carousel-inner a {
+	display: block;
+	text-decoration: none;
+	width: 100%;
+}
+
+/* --- Custom Carousel Controls --- */
+.custom-control-btn {
+	width: 36px;
+	height: 36px;
+	background-color: rgba(0, 0, 0, 0.45);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	z-index: 10;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color 0.2s;
+}
+
+.custom-control-btn:hover {
+	background-color: rgba(0, 0, 0, 0.65);
+	color: white;
+}
+
+.btn-prev {
+	left: 20px;
+}
+
+.btn-next {
+	right: 20px;
+}
+
+/* --- Custom Indicators --- */
+.custom-indicators-wrapper {
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(0, 0, 0, 0.45);
+	padding: 6px 12px;
+	border-radius: 20px;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	z-index: 10;
+}
+
+.custom-indicator-dot {
+	width: 8px;
+	height: 8px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	border-radius: 50%;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.custom-indicator-dot.active {
+	background-color: #fff;
+	width: 10px;
+	height: 10px;
+}
+
+/*-----------Div13--------------*/
+.text-block-container {
+	max-width: 1200px;
+	/* Same width as previous divs */
+	margin: 0 auto;
+	/* Centers the div on the page */
+	padding: 20px;
+	/* Same padding as previous divs */
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+	color: #4a4a4a;
+}
+
+.text-block-heading {
+	font-weight: 700;
+	color: #333;
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+.text-block-paragraph {
+	font-size: 14px;
+	line-height: 1.6;
+	margin-bottom: 18px;
+}
+
+.text-block-paragraph:last-child {
+	margin-bottom: 0;
+}
+
+/*--------FooterDiv---------*/
+.custom-footer {
+	background-color: #1a1a1a;
+	color: #fff;
+	padding: 50px 0 20px 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+	margin-top: 40px;
+}
+
+/* Inner container restricted to 1200px to align with previous divs */
+.footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.footer-heading {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #c4c4c4;
+	text-decoration: none;
+	font-size: 14px;
+	transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+/* Third column specific styling */
+.footer-brand img {
+	max-width: 180px;
+	margin-bottom: 5px;
+}
+
+.tata-enterprise {
+	font-size: 12px;
+	color: #c4c4c4;
+	margin-bottom: 25px;
+	font-weight: 600;
+	display: block;
+}
+
+.store-badges img {
+	height: 40px;
+	margin-right: 10px;
+	margin-bottom: 25px;
+	cursor: pointer;
+}
+
+.social-icons {
+	display: flex;
+	gap: 25px;
+}
+
+.social-icons a {
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+	transition: opacity 0.2s;
+}
+
+.social-icons a:hover {
+	opacity: 0.7;
+}
+
+/* Bottom dashed line */
+.footer-dashed-line {
+	border-top: 1px dashed #555;
+	margin-top: 40px;
+	width: 100%;
+}
+</style>
+
+
+</style>
+</head>
+
+<body>
+	<!-------div1------>
+	<header class="main-header">
+		<div class="header-container">
+			<!-- Top Header -->
+			<div class="top-header">
+				<!-- Logo -->
+				<a href="#" class="brand"> <span class="brand-name"> <span
+						class="brand-symbol">b</span>bigbasket
+				</span> <span class="brand-tagline">A TATA Enterprise</span>
+				</a>
+
+				<!-- Search -->
+				<div class="search-box">
+					<i class="bi bi-search"></i> <input type="text"
+						placeholder="Search for Products...">
+				</div>
+
+				<!-- Delivery -->
+				<div class="delivery-box">
+					<strong> <i class="bi bi-lightning-fill"></i> Delivery in
+						10 mins
+					</strong> <span>Select Location</span>
+				</div>
+
+				<!-- Login -->
+
+				<div class="login-btn-outline-dark ">
+					<button class="btn btn-category dropdown-toggle" type="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fa-jelly-fill fa-regular fa-user"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-dark-custom shadow">
+						<li><a class="dropdown-item dropdown-item-custom active"
+							href="#">MyAccount</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">MyBasket</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">MyOrder</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">MySmartBasket</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">MyWallet</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">ContactUs</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Logout</a></li>
+					</ul>
+				</div>
+
+				<!-- Cart -->
+
+				<button class="cart-btn" aria-label="Shopping cart">
+					<i class="bi bi-basket-fill"></i>
+				</button>
+			</div>
+
+			<!-- Bottom Navigation -->
+
+			<nav class="bottom-nav">
+				<div class="login-btn-outline-dark ">
+					<button class="btn btn-category dropdown-toggle" type="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						<span>Shop-By-Category</span>
+
+					</button>
+					<ul class="dropdown-menu dropdown-menu-dark-custom shadow">
+						<li><a class="dropdown-item dropdown-item-custom active"
+							href="#">Electronices</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Fashon</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Pharmacy</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Fruits
+								& Vegetables</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Foodgrains,Oil
+								& Masala</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">BAckery,Cakes,&
+								Dairy</a></li>
+						<li><a class="dropdown-item dropdown-item-custom" href="#">Beverages</a></li>
+					</ul>
+				</div>
+
+
+				<a href="#" class="nav-link-custom"> Exotic Fruits &amp; ... </a> <a
+					href="#" class="nav-link-custom">Tea</a> <a href="#"
+					class="nav-link-custom">Ghee</a> <a href="#"
+					class="nav-link-custom">Nandini</a> <a href="#"
+					class="nav-link-custom"> Fresh Vegetables <i
+					class="bi bi-chevron-double-right nav-next"></i>
+				</a>
+
+				<div class="smart-basket">
+					<i class="bi bi-basket"></i> <span>Smart<br>Basket
+					</span>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+
+
+
+	<!----div2------->
+	<div class="d-flex flex-wrap justify-content-center gap-3 py-3">
+
+		<a href="#" class="custom-btn btn-eggs"> EGGS, MEAT <br> AND
+			FISH
+		</a> <a href="#" class="custom-btn btn-neupass"> <span
+			class="neu-logo">N</span> NEU<span style="color: #ff914d;">PASS</span>
+		</a> <a href="#" class="custom-btn btn-ayurveda px-4"> AYURVEDA </a> <a
+			href="#" class="custom-btn btn-gray-light"> BUY MORE <br>
+			SAVE MORE
+		</a> <a href="#" class="custom-btn btn-gray-light"> DEALS <br> OF
+			THE WEEK
+		</a> <a href="#" class="custom-btn btn-gray-light px-4"> COMBO STORE </a>
+
+	</div>
+
+
+	<!----div3-------->
+
+	<div class="smart-basket-section mt-5 rounded">
+
+		<div
+			class="d-flex justify-content-between align-items-center mb-4 basket-header">
+			<h5 class="m-0 fw-bold">My Smart Basket</h5>
+			<div class="d-flex align-items-center gap-3">
+				<a href="#" class="view-all"> View All </a>
+				<div class="d-flex gap-2">
+					<!-- Added IDs for JavaScript functionality -->
+					<a id="btn-scroll-left" class="nav-btn"><i
+						class="fa-solid fa-chevron-left"></i></a> <a id="btn-scroll-right"
+						class="nav-btn"><i class="fa-solid fa-chevron-right"></i></a>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="product-slider" class="row g-3 scrolling-wrapper">
+
+
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="discount-badge">20% OFF</div>
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/10000326_17-fresho-coriander-leaves.jpg?tr=w-154,q-80"
+							alt="Local Carrot">
+						</a>
+
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Coriander Leaves Without Roots</div>
+					<select class="form-select weight-select mb-auto">
+						<option>1 kg</option>
+						<option>500 g</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹330.00</span> <span class="old-price">₹412.50</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/40208996_1-fresho-carrot-local.jpg?tr=w-154,q-80"
+							alt="Local Carrot">
+						</a>
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Local Carrot</div>
+					<select class="form-select weight-select mb-auto">
+						<option>5 kg</option>
+						<option>1 kg</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹149.00</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 3: Tomato -->
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/40183216_3-fresho-tomato-local.jpg?tr=w-154,q-80"
+							alt="Local Tomato">
+						</a>
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Local Tomato - Premium</div>
+					<select class="form-select weight-select mb-auto">
+						<option>20 kg</option>
+						<option>5 kg</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹290.00</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 4: Potato -->
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="discount-badge">20% OFF</div>
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/40048457_20-fresho-potato-new-crop.jpg?tr=w-154,q-80"
+							alt="Potato">
+						</a>
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Potato</div>
+					<select class="form-select weight-select mb-auto">
+						<option>1 kg</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹18.00</span> <span class="old-price">₹22.50</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- NEW Card 5: Onion -->
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/10000150_21-fresho-onion.jpg?tr=w-154,q-80"
+							alt="Onion">
+						</a>
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Onion (Local)</div>
+					<select class="form-select weight-select mb-auto">
+						<option>5 kg</option>
+						<option>2 kg</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹120.00</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- NEW Card 6: Cabbage -->
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/10000066_28-fresho-cabbage.jpg?tr=w-154,q-80 "
+							alt="Capsicum">
+
+							<div class="veg-icon"></div>
+							<div class="time-badge">
+								<i class="fa-solid fa-bolt"></i> 10 MINS
+							</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Capsicum - Green</div>
+					<select class="form-select weight-select mb-auto">
+						<option>500 g</option>
+						<option>250 g</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹45.00</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- NEW Card 7: Capsicum -->
+			<div class="col">
+				<div class="product-card h-100 d-flex flex-column">
+					<div class="img-container">
+						<a href="#"> <img
+							src="https://www.bbassets.com/media/uploads/p/m/10000067_27-fresho-capsicum-green.jpg?tr=w-154,q-80"
+							alt="Capsicum">
+						</a>
+						<div class="veg-icon"></div>
+						<div class="time-badge">
+							<i class="fa-solid fa-bolt"></i> 10 MINS
+						</div>
+					</div>
+					<div class="brand-name">fresho!</div>
+					<div class="product-title">Capsicum - Green</div>
+					<select class="form-select weight-select mb-auto">
+						<option>500 g</option>
+						<option>250 g</option>
+					</select>
+					<div class="price-area">
+						<span class="current-price">₹45.00</span>
+					</div>
+					<div class="action-row">
+						<button class="btn-wishlist">
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button class="btn-add">Add</button>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!--------Div 4--------->
+
+
+	<div class="top-offers-container mt-4 rounded">
+		<h4 class="section-title">Top Offers</h4>
+
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+			<!-- Card 1 -->
+			<div class="col">
+				<a href="#" class="offer-card">
+					<div class="offer-card-top">
+						<span>DEALS OF</span>
+					</div>
+					<div class="offer-card-bottom">
+						<div class="offer-text-wrapper">
+							<span>THE WEEK</span>
+						</div>
+						<div class="view-offers-link">View offers ></div>
+					</div>
+				</a>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="col">
+				<a href="#" class="offer-card">
+					<div class="offer-card-top">
+						<span>BIG PACK</span>
+					</div>
+					<div class="offer-card-bottom">
+						<div class="offer-text-wrapper">
+							<span>BIGGER<br>DISCOUNTS
+							</span>
+						</div>
+						<div class="view-offers-link">View offers ></div>
+					</div>
+				</a>
+			</div>
+
+			<!-- Card 3 -->
+			<div class="col">
+				<a href="#" class="offer-card">
+					<div class="offer-card-top">
+						<span>COMBOS</span>
+					</div>
+					<div class="offer-card-bottom">
+						<div class="offer-text-wrapper">
+							<span>YOU<br>CAN'T MISS
+							</span>
+						</div>
+						<div class="view-offers-link">View offers ></div>
+					</div>
+				</a>
+			</div>
+
+			<!-- Card 4 -->
+			<div class="col">
+				<a href="#" class="offer-card">
+					<div class="offer-card-top">
+						<span>THE</span>
+					</div>
+					<div class="offer-card-bottom">
+						<div class="offer-text-wrapper">
+							<span>₹30 CORNER</span>
+						</div>
+						<div class="view-offers-link">View offers ></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+	<!-------Div 5------------->
+
+
+	<div class="fruits-veg-container mt-4">
+		<h4 class="section-title">Fruits and Vegetables</h4>
+
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+
+			<!-- Card 1: Fresh Vegetables -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-vegetables_480_250923.jpg?tr=w-480,q-80"
+							alt="Fresh Vegetables">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 2: Fresh Fruits -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-fruits_480_250923.jpg?tr=w-480,q-80"
+							alt="Fresh Fruits">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 3: Cuts & Exotics -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_cuts-&-exotics_480_250923.jpg?tr=w-480,q-80"
+							alt="Cuts & Exotics">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 4: Herbs & Seasonings -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_herbs-&-seasoning_480_250923.jpg?tr=w-480,q-80"
+							alt="Herbs & Seasonings">
+					</div>
+
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-------Div6-------------->
+
+	<div class="daily-staples-container mt-4">
+		<h4 class="section-title">Your Daily Staples</h4>
+
+		<div class="staple-slider">
+			<!-- Card 1 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_atta-flour-staplesStorefront_m_480_250323_01.jpg?tr=w-480,q-80"
+						alt="Atta & Flour">
+				</div>
+
+			</a>
+
+			<!-- Card 2 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_rice-staplesStorefront_m_480_250323_02.jpg?tr=w-480,q-80"
+						alt="Rice & Rice Products">
+				</div>
+			</a>
+
+			<!-- Card 3 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dals-pulses-staplesStorefront_m_480_250323_03.jpg?tr=w-480,q-80"
+						alt="Dals & Pulses">
+				</div>
+
+			</a>
+
+			<!-- Card 4 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_cooking-oils-staplesStorefront_m_480_250323_04.jpg?tr=w-480,q-80"
+						alt="Cooking Oils & Ghee">
+				</div>
+
+			</a>
+
+			<!-- Card 5 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dry-fruits-staplesStorefront_m_480_250323_05.jpg?tr=w-480,q-80"
+						alt="Dry Fruits">
+				</div>
+
+			</a>
+
+			<!-- Card 6 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_salt-staplesStorefront_m_480_250323_06.jpg?tr=w-480,q-80"
+						alt="Salt, Sugar & Jaggery">
+				</div>
+
+			</a>
+		</div>
+	</div>
+
+	<!-------Div7-------->
+
+	<div class="daily-staples-container mt-4">
+		<h4 class="section-title">Beverages</h4>
+
+		<div class="staple-slider">
+			<!-- Card 1 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_health-drinks-&-supplements_480_250923.jpg?tr=w-480,q-80"
+						alt="Atta & Flour">
+				</div>
+
+			</a>
+
+			<!-- Card 2 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_tea-&-coffee_480_250923.jpg?tr=w-480,q-80"
+						alt="Rice & Rice Products">
+				</div>
+			</a>
+
+			<!-- Card 3 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_flavoured-&-soya-milk_480_250923.jpg?tr=w-480,q-80"
+						alt="Dals & Pulses">
+				</div>
+
+			</a>
+
+			<!-- Card 4 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_juices_480_250923.jpg?tr=w-480,q-80"
+						alt="Cooking Oils & Ghee">
+				</div>
+
+			</a>
+
+			<!-- Card 5 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_energy-drinks_480_250923.jpg?tr=w-480,q-80"
+						alt="Dry Fruits">
+				</div>
+
+			</a>
+
+			<!-- Card 6 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_soft-drinks-&-more_480_250923.jpg?tr=w-480,q-80"
+						alt="Salt, Sugar & Jaggery">
+				</div>
+
+			</a>
+		</div>
+	</div>
+
+	<!--------Div8------------->
+
+
+	<div class="fruits-veg-container mt-4">
+		<h4 class="section-title">Snacks Store</h4>
+
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+
+			<!-- Card 1: Fresh Vegetables -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_biscuits-&-namkeens_480_250923.jpg?tr=w-480,q-80"
+							alt="">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 2: Fresh Fruits -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_breakfast-cereals_480_250923.jpg?tr=w-480,q-80"
+							alt="Fresh Fruits">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 3: Cuts & Exotics -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_pasta-sauces-&-more_480_270723.jpg?tr=w-480,q-80"
+							alt="Cuts & Exotics">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 4: Herbs & Seasonings -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_sweet-cravings_480_250923.jpg?tr=w-480,q-80"
+							alt="Herbs & Seasonings">
+					</div>
+
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+	<!---------Div9--------------->
+
+
+	<div class="fruits-veg-container mt-4">
+		<h4 class="section-title">Cleaning & Household</h4>
+
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+
+			<!-- Card 1: Fresh Vegetables -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_cleaners_480_250723.jpg?tr=w-480,q-80"
+							alt="">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 2: Fresh Fruits -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_detergents-&-fabric-care_480_250723.jpg?tr=w-480,q-80"
+							alt="">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 3: Cuts & Exotics -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_paper-disposables-&-garbage-bags_480_250723.jpg?tr=w-480,q-80"
+							alt="">
+					</div>
+
+				</a>
+			</div>
+
+			<!-- Card 4: Herbs & Seasonings -->
+			<div class="col">
+				<a href="#" class="fruit-card">
+					<div class="fruit-card-img">
+						<!-- Replace src with actual image -->
+						<img
+							src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_freshner_480_250723.jpg?tr=w-480,q-80"
+							alt="">
+					</div>
+
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+	<!-----------Div10---------------------->
+
+	<div class="daily-staples-container mt-4">
+		<h4 class="section-title">Beauty and Hygiene</h4>
+
+		<div class="staple-slider">
+			<!-- Card 1 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_-makeup_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 2 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_moisturiser_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+			</a>
+
+			<!-- Card 3 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_perfumes_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 4 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_mens-shaving_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 5 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_minimum-30-off_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 6 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_big-pack-bigger-saving%20bf_480_250923.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+		</div>
+	</div>
+
+
+
+	<!----------Div11----------------->
+
+
+	<div class="daily-staples-container mt-4">
+		<h4 class="section-title">Home and Kitchen</h4>
+
+		<div class="staple-slider">
+			<!-- Card 1 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMunder-99_m_250723_01.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 2 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM100-199_m_250723_02.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+			</a>
+
+			<!-- Card 3 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMStorefront-pressure-cooker_m_250723_03.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 4 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMStorefront-stationery-store_m_250723_04.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 5 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM-storage-container_m_250723_05.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+
+			<!-- Card 6 -->
+			<a href="#" class="staple-card">
+				<div class="staple-img">
+					<img
+						src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM-cleaning-needs_m_250723_06.jpg?tr=w-480,q-80"
+						alt="">
+				</div>
+
+			</a>
+		</div>
+	</div>
+
+
+	<!---------div12---------------->
+
+	<div class="carousel-container mt-4">
+
+		<div id="emptyPromoCarousel" class="carousel slide position-relative"
+			data-bs-ride="carousel">
+
+			<div class="carousel-inner promo-carousel-inner">
+				<!-- Empty Slide 1 -->
+				<div class="carousel-item active">
+					<a href="#"> <img
+						src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-1130,q-80"
+						alt="Promo Banner 1">
+					</a>
+				</div>
+
+				<!-- Empty Slide 2 -->
+				<div class="carousel-item">
+					<a href="#"> <img
+						src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-1130,q-80"
+						alt="Promo Banner 2">
+					</a>
+				</div>
+
+				<!-- Empty Slide 3 -->
+				<div class="carousel-item">
+					<a href="#"> <img
+						src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-1130,q-80"
+						alt="Promo Banner 3">
+					</a>
+				</div>
+			</div>
+
+			<!-- Custom Controls (Left / Right Arrows) -->
+			<button class="custom-control-btn btn-prev" type="button"
+				data-bs-target="#emptyPromoCarousel" data-bs-slide="prev">
+				<i class="fa-solid fa-chevron-left"></i>
+			</button>
+			<button class="custom-control-btn btn-next" type="button"
+				data-bs-target="#emptyPromoCarousel" data-bs-slide="next">
+				<i class="fa-solid fa-chevron-right"></i>
+			</button>
+
+			<!-- Custom Indicators (Pill Bottom Center) -->
+			<div class="custom-indicators-wrapper">
+				<button type="button" data-bs-target="#emptyPromoCarousel"
+					data-bs-slide-to="0" class="custom-indicator-dot active"
+					aria-current="true"></button>
+				<button type="button" data-bs-target="#emptyPromoCarousel"
+					data-bs-slide-to="1" class="custom-indicator-dot"></button>
+				<button type="button" data-bs-target="#emptyPromoCarousel"
+					data-bs-slide-to="2" class="custom-indicator-dot"></button>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+	<!--------Div13---------->
+	<div class="text-block-container mt-4">
+
+		<h2 class="text-block-heading">online grocery store – your daily
+			needs destination</h2>
+
+		<p class="text-block-paragraph">Imagine getting fresh fruits,
+			vegetables, pulses, dairy, and branded items delivered right to your
+			door with a single click. Our pioneering platform brings thousands of
+			products from numerous brands straight to you, covering everything
+			from household cleaning supplies to the latest beauty essentials.</p>
+
+		<p class="text-block-paragraph">We've made shopping for daily
+			essentials completely stress-free. Ordering groceries online from a
+			single, reliable source offers immense convenience and substantial
+			savings. We ensure that fresh produce, meat, dairy, and pantry
+			staples reach you effortlessly, transforming the way you restock your
+			home.</p>
+
+		<p class="text-block-paragraph">Serving hundreds of cities across
+			the country, we guarantee swift and timely delivery to ensure all
+			your household groceries and snack needs arrive exactly when you need
+			them.</p>
+
+		<p class="text-block-paragraph">
+			<strong>Slotted Delivery:</strong> Select a highly convenient
+			delivery window that fits your specific schedule perfectly, whether
+			you are an early riser needing morning drops or require a late-night
+			delivery. We cater to every routine.
+		</p>
+
+		<p class="text-block-paragraph">
+			<strong>Instant Delivery:</strong> To meet the ever-growing need for
+			speed, our quick commerce option delivers essential items in mere
+			minutes, completely revolutionizing how you shop for urgent needs.
+			Choose from thousands of essentials, currently available in select
+			locations.
+		</p>
+
+		<p class="text-block-paragraph">Whether it's a last-minute dinner
+			plan or an urgent household requirement, our commitment to providing
+			a vast range of products rapidly and efficiently makes us the
+			ultimate go-to destination for immediate grocery needs.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+	<!--------Footer-------------->
+	<footer class="custom-footer">
+		<!-- Inner container aligns with your 1200px layout -->
+		<div class="footer-container">
+			<div class="row">
+
+				<!-- Column 1: Bigbasket -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<h5 class="footer-heading">Bigbasket</h5>
+					<ul class="footer-links">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">In News</a></li>
+						<li><a href="#">Green bigbasket</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Affiliate</a></li>
+						<li><a href="#">Terms and Conditions</a></li>
+						<li><a href="#">bb Daily</a></li>
+					</ul>
+				</div>
+
+				<!-- Column 2: Help -->
+				<div class="col-md-3 col-sm-6 mb-4">
+					<h5 class="footer-heading">Help</h5>
+					<ul class="footer-links">
+						<li><a href="#">FAQs</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">bb Wallet FAQs</a></li>
+						<li><a href="#">bb Wallet T&Cs</a></li>
+						<li><a href="#">Vendor Connect</a></li>
+					</ul>
+				</div>
+
+				<!-- Column 3: Spacer for layout matching the image -->
+				<div class="col-md-2 d-none d-md-block"></div>
+
+				<!-- Column 4: Brand, Apps & Socials -->
+				<div class="col-md-4 col-sm-12 mb-4">
+
+					<!-- Logo Placeholder -->
+					<div class="footer-brand">
+						<img
+							src="https://via.placeholder.com/180x50/000000/FFFFFF?text=bb+bigbasket"
+							alt="Bigbasket Logo"> <span class="tata-enterprise">A
+							TATA Enterprise</span>
+					</div>
+
+					<!-- App Badges Placeholder -->
+					<div class="store-badges d-flex">
+						<img
+							src="https://via.placeholder.com/130x40/000000/FFFFFF?text=Google+Play"
+							alt=""> <img
+							src="https://via.placeholder.com/130x40/000000/FFFFFF?text=App+Store"
+							alt="Download on the App Store">
+					</div>
+
+					<!-- Social Icons -->
+					<div class="social-icons">
+						<a href="#"><i class="fa-brands fa-facebook-f"></i></a> <a
+							href="#"><i class="fa-brands fa-instagram"></i></a> <a href="#"><i
+							class="fa-brands fa-twitter"></i></a> <a href="#"><i
+							class="fa-brands fa-pinterest-p"></i></a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Dashed line at the bottom -->
+			<div class="footer-dashed-line"></div>
+		</div>
+	</footer>
+
+
+	<!-------Minimal Js------------->
+
+
+	<!-- Bootstrap JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+		
+	</script>
+
+	<!-- Script to make the Left/Right arrows scroll the slider -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const slider = document.getElementById("product-slider");
+			const btnLeft = document.getElementById("btn-scroll-left");
+			const btnRight = document.getElementById("btn-scroll-right");
+
+			// Amount of pixels to scroll per click (Roughly width of one card + gap)
+			const scrollAmount = 300;
+
+			btnRight.addEventListener("click", function(e) {
+				e.preventDefault();
+				slider.scrollLeft += scrollAmount;
+			});
+
+			btnLeft.addEventListener("click", function(e) {
+				e.preventDefault();
+				slider.scrollLeft -= scrollAmount;
+			});
+		});
+	</script>
+</body>
+
+</html>
